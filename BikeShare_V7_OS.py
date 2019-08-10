@@ -11,8 +11,8 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+cities = ['chicago', 'new york city', 'washington']
 months = ['january', 'february', 'march', 'april', 'may', 'june']
-days_in_number = [1,2,3,4,5,6,7]
 days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 def get_filters():
@@ -29,7 +29,7 @@ def get_filters():
 
     while True:
         city =input('Would you like to see data for Chicago, Washington or New York City? ').lower()
-        if city not in ('chicago, new york city, washington'):
+        if city not in cities:
             print('It seems you typed a wrong city name, please try again!')
         else:
             break
@@ -45,8 +45,8 @@ def get_filters():
         input_time = input('Would you like to filter the data by month, day or not at all? Type "none" for no time filter.\n ')
         if input_time == 'month':
             while True:
-                month = input('Which month? January, February, March, May or June? Please Type out the full month name.\n ')
-                if month.lower() in months:
+                month = input('Which month? January, February, March, May or June? Please Type out the full month name.\n ').lower()
+                if month in months:
                     month = month.lower()
                     day = 'all'
                     break
@@ -59,11 +59,10 @@ def get_filters():
         if input_time == 'day':
             while True:
                 try:
-                    day = int(input('Which day? Please type your respond as an integer (e.g., 1=Sunday) \n'))
-                    if day in days_in_number:
-                        day = days[day-1]
-                        month = 'all'
-                        break
+                    day = int(input('Which day? Please type your respond as an integer (e.g., 1=Sunday) \n')) - 1
+                    day = days[day]
+                    month = 'all'
+                    break
 
                 except:
                     print('Wrong input, it should be an integer between 1 and 7, please try again!')
