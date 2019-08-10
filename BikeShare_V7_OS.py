@@ -13,7 +13,6 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 cities = ['chicago', 'new york city', 'washington']
 months = ['january', 'february', 'march', 'april', 'may', 'june']
-days_in_number = [1,2,3,4,5,6,7]
 days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 def get_filters():
@@ -60,11 +59,10 @@ def get_filters():
         if input_time == 'day':
             while True:
                 try:
-                    day = int(input('Which day? Please type your respond as an integer (e.g., 1=Sunday) \n'))
-                    if day in days_in_number:
-                        day = days[day-1]
-                        month = 'all'
-                        break
+                    day = int(input('Which day? Please type your respond as an integer (e.g., 1=Sunday) \n')) - 1
+                    day = days[day]
+                    month = 'all'
+                    break
 
                 except:
                     print('Wrong input, it should be an integer between 1 and 7, please try again!')
