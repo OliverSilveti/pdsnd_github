@@ -45,8 +45,8 @@ def get_filters():
         input_time = input('Would you like to filter the data by month, day or not at all? Type "none" for no time filter.\n ')
         if input_time == 'month':
             while True:
-                month = input('Which month? January, February, March, May or June? Please Type out the full month name.\n ')
-                if month.lower() in months:
+                month = input('Which month? January, February, March, May or June? Please Type out the full month name.\n ').lower()
+                if month in months:
                     month = month.lower()
                     day = 'all'
                     break
