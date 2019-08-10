@@ -5,7 +5,7 @@
 BikeShare
 
 ### Description
-It is a python code that reads data and retrieves stats from 3 different datasets according to what the user would like to investigate. The data provided is on the bike sharing market of three different cities, Chicago, New York, and Washington.
+It is a python code that reads and retrieves data as well as proving stats from 3 different datasets according to what the user would like to investigate. The data provided is on the bike sharing market of three different cities, Chicago, New York, and Washington.
 
 ### Files used
 BikeShare_V7_OS.py
